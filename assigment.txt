@@ -1,0 +1,53 @@
+-- create a table
+CREATE TABLE employee(
+  id INTEGER PRIMARY KEY,
+  EMP_name TEXT NOT NULL,
+  age INTEGER NOT NULL
+);
+insert into employee values ('001','amit','23');
+insert into employee values ('002','suresh','26');
+insert into employee values ('003','ramesh','28');
+insert into employee values ('004','suyash','30');
+insert into employee values ('005','nitin','35');
+insert into employee values ('006','rakesh','37');
+insert into employee values ('007','neha','29');
+insert into employee values ('008','pooja','25');
+
+select * from employee;
+
+create TABLE dept(
+id INTEGER PRIMARY KEY,
+dept_name TEXT NOT NULL
+);
+
+insert into dept values ('001','it');
+insert into dept values ('002','com');
+insert into dept values ('003','mech');
+insert into dept values ('004','civil');
+insert into dept values ('005','production');
+insert into dept values ('006','instrumentation');
+insert into dept values ('007','automob');
+insert into dept values ('008','extc');
+
+select * from dept,employee;
+-- 2nd 
+SELECT 
+      E.EMP_name 
+FROM employee E
+INNER JOIN dept D ON E.ID=D.ID
+where D.dept_name = 'com';
+-- 3rd
+update dept  
+set dept_name='it'
+where id='003';
+
+SELECT * FROM dept;
+
+-- 4th
+delete FROM employee 
+where EMP_name='rakesh';
+
+SELECT * from employee;
+
+-- 5th
+CREATE database db_name;
